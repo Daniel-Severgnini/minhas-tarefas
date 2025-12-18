@@ -1,5 +1,17 @@
+import SideBar from './containers/SideBar'
+import TaskList from './containers/TaskList'
+import EstiloGlobal, { Container } from './styles'
+
 function App() {
-  return <div className="App"></div>
+  return (
+    <>
+      <EstiloGlobal />
+      <Container>
+        <SideBar />
+        <TaskList />
+      </Container>
+    </>
+  )
 }
 
 export default App
