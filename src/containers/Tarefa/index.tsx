@@ -23,8 +23,7 @@ const Tarefa = ({
     if (descriptionOriginal.length > 0) {
       setDescricao(descriptionOriginal)
     }
-  }),
-    [descriptionOriginal]
+  }, [descriptionOriginal])
 
   function cancelEdit() {
     setEditing(false)

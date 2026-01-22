@@ -5,11 +5,18 @@ import Tarefa from '../Tarefa'
 
 const TaskList = () => {
   const { itens } = useSelector((state: RootReducer) => state.tasks)
+  const { term } = useSelector((state: RootReducer) => state.filtro)
+
+  const filtraTarefas = () => {
+    return itens.filter(
+      (item) => item.title.toLowerCase().search(term.toLowerCase()) >= 0
+    )
+  }
   return (
     <Container>
-      <p>2 tarefas marcadas como: &quot;categoria&quot; e &quot;termo&quot;</p>
+      <p>2 tarefas marcadas como: &quot;categoria&quot; e &quot;{term}&quot;</p>
       <ul>
-        {itens.map((t) => (
+        {filtraTarefas().map((t) => (
           <li key={t.title}>
             <Tarefa
               id={t.id}
